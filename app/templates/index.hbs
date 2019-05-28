@@ -1,14 +1,109 @@
-<h2>Axcient Candidate Application</h2>
-<p>The purpose of this application is to display organizations with users and their documents.</p>
+<div class="row top-buffer">
+  <div class="col-xl-12">
+    <h2>Axcient Candidate Application</h2>
+    <p>The purpose of this application is to display organizations with users and their documents.</p>
+  </div>
+</div>
 
-<h3>Ember Resources</h3>
-<ul>
-  <li><a href="https://guides.emberjs.com/release/" target="_blank" rel="noopener">Ember Guides</a></li>
-  <li><a href="https://api.emberjs.com/ember/release" target="_blank" rel="noopener">Ember API Reference</a></li>
-</ul>
+<div class="row">
+  <div class="col-xl-12">
+    {{#bs-accordion selected="1" as |acc|}}
+      {{#acc.item value="1" title="First challenge - Update the 'users.edit' page"}}
+        <ol>
+          <li>
+            Request the user from the API [<a href="https://guides.emberjs.com/release/models/finding-records/#toc_retrieving-a-single-record" target="_blank" rel="noopener">guide</a>]<br>
+            <ul>
+              <li><i>Criteria:</i> The model hook of the route fetches the correct data for the page</li>
+            </ul>
+          </li>
+          <li>
+            Display the user's basic information<br>
+            <ul>
+              <li><i>Criteria:</i> "First Name" input exists and displays the user's first name</li>
+              <li><i>Criteria:</i> "Last Name" input exists and displays the user's last name</li>
+              <li><i>Criteria:</i> "Email Address" input exists and displays the user's email address</li>
+              <li><i>Criteria:</i> "Save" button exists and is the primary button for the form</li>
+              <li><i>Criteria:</i> "Cancel" button exists and resets the form values</li>
+            </ul>
+          </li>
+        </ol>
+      {{/acc.item}}
+      {{#acc.item value="2" title="Second challenge - Add 'cancel' and 'save' actions to the 'users.edit' page"}}
+        <ol>
+          <li>
+            Cancel button<br>
+            <ul>
+              <li><i>Criteria:</i> Exists and is not the primary button</li>
+              <li><i>Criteria:</i> When clicked, calls the 'cancel' action and reverts the changes to the form fields</li>
+            </ul>
+          </li>
+          <li>
+            Save Button<br>
+            <ul>
+              <li><i>Criteria:</i> Exists and is the primary button</li>
+              <li><i>Criteria:</i> When clicked, calls the 'saveUser' action and saves the current changes</li>
+            </ul>
+          </li>
+        </ol>
+      {{/acc.item}}
+      {{#acc.item value="3" title="Third challenge - Finish the 'users.edit' page"}}
+        <ol>
+          <li>
+            If the user has documents<br>
+            <ul>
+              <li><i>Criteria:</i> Each document is listed</li>
+              <li><i>Criteria:</i> The document name links to the "users.documents.edit" page</li>
+              <li><i>Criteria:</i> Below the last document, display a link labeled "Create a Document" which links to the "users.documents.new" page</li>
+            </ul>
+          </li>
+          <li>
+            If the user has no documents<br>
+            <ul>
+              <li><i>Criteria:</i> Display a link labeled "Create a Document" which links to the "users.documents.new" page</li>
+            </ul>
+          </li>
+        </ol>
+      {{/acc.item}}
+      {{#acc.item value="4" title="Fourth challenge - Update the 'users.documents.new' page"}}
+        <ol>
+          <li>
+            Display document fields<br>
+            <ul>
+              <li><i>Criteria:</i> "Name" input exists</li>
+              <li><i>Criteria:</i> "Contents" input exists</li>
+              <li><i>Criteria:</i> "Save" button exists and is the primary button for the form</li>
+              <li><i>Criteria:</i> "Cancel" button exists and resets the form values</li>
+            </ul>
+          </li>
+        </ol>
+      {{/acc.item}}
+      {{#acc.item value="5" title="Bonus challenges - No particular order"}}
+        <ul>
+          <li>Add "cancel" action to the 'organizations.edit' page</li>
+          <li>Add "saveOrganization" action to 'organizations.edit' page</li>
+          <li>Add the ability to delete a user</li>
+          <li>Add the ability to update an existing document</li>
+          <li>Add the ability to delete a document</li>
+          <li>Fix the "Organizations" navigation link to be "active" when viewing a specific organization</li>
+        </ul>
+      {{/acc.item}}
+    {{/bs-accordion}}
+  </div>
+</div>
 
-<h3>Bootstrap Resources</h3>
-<ul>
-  <li><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank" rel="noopener">Bootstrap Documentation</a></li>
-  <li><a href="https://www.ember-bootstrap.com/#/components" target="_blank" rel="noopener">Ember Bootstrap Documentation</a></li>
-</ul>
+<div class="row top-buffer">
+  <div class="col-xl-6">
+    <h4>Ember Resources</h4>
+    <ul>
+      <li><a href="https://guides.emberjs.com/release/" target="_blank" rel="noopener">Ember Guides</a></li>
+      <li><a href="https://api.emberjs.com/ember/release" target="_blank" rel="noopener">Ember API Reference</a></li>
+    </ul>
+  </div>
+  <div class="col-xl-6">
+    <h4>Bootstrap Resources</h4>
+    <ul>
+      <li><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank" rel="noopener">Bootstrap Documentation</a></li>
+      <li><a href="https://www.ember-bootstrap.com/#/components" target="_blank" rel="noopener">Ember Bootstrap Documentation</a></li>
+    </ul>
+  </div>
+</div>
