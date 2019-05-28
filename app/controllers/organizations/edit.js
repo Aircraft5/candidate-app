@@ -16,12 +16,24 @@ export default Controller.extend({
   emailAddress: "",
 
   actions: {
-    toggleModal() {
+    cancelEdit() {
+      // rollback the model
+    },
+
+    async saveOrganization() {
+      // save the model
+    },
+
+    showModal() {
       this.set("firstName", "");
       this.set("lastName", "");
       this.set("emailAddress", "");
 
-      this.toggleProperty("showUserModal");
+      this.set("showUserModal", true);
+    },
+
+    hideModal() {
+      this.set("showUserModal", false);
     },
 
     async createUser() {

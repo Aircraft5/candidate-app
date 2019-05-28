@@ -10,8 +10,8 @@
         <label for="organization-name">Name</label>
         {{input class="form-control" value=model.name id="organization-name"}}
       </div>
-      {{#bs-button}}Cancel{{/bs-button}}
-      {{#bs-button type="primary"}}Save{{/bs-button}}
+      {{#bs-button onClick=(action "cancelEdit")}}Cancel{{/bs-button}}
+      {{#bs-button onClick=(action "saveOrganization") type="primary"}}Save{{/bs-button}}
     </form>
   </div>
 </div>
@@ -41,11 +41,11 @@
 
 <div class="row top-buffer">
   <div class="col-xl-12">
-    {{#bs-button type="primary" onClick=(action "toggleModal")}}Create a new user{{/bs-button}}
+    {{#bs-button type="primary" onClick=(action "showModal")}}Create a new user{{/bs-button}}
   </div>
 </div>
 
-{{#bs-modal open=showUserModal size="lg" onSubmit=(action "createUser") as |modal|}}
+{{#bs-modal open=showUserModal size="lg" onHidden=(action "hideModal") onSubmit=(action "createUser") as |modal|}}
   {{#modal.header}}Create User{{/modal.header}}
   {{#modal.body}}
     <div class="row">
