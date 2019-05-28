@@ -2,6 +2,8 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model() {
-    this.store.findAll("organization");
+    return this.store.findAll("organization", {
+      include: "users,users.documents"
+    });
   }
 });

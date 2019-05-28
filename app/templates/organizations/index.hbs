@@ -1,7 +1,16 @@
-<h2>Organizations</h2>
-
-<ul>
-  {{#each model as |org|}}
-    <li>{{org.name}}</li>
-  {{/each}}
-</ul>
+<table class="table">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Users</th>
+  </thead>
+  <tbody>
+    {{#each model as |org|}}
+      <tr>
+        <td>{{org.id}}</td>
+        <td>{{#link-to "organizations.edit" org.id}}{{org.name}}{{/link-to}}</td>
+        <td>{{org.users.length}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

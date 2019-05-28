@@ -1,1 +1,16 @@
-{{outlet}}
+<table class="table">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Documents</th>
+  </thead>
+  <tbody>
+    {{#each model.users as |user|}}
+      <tr>
+        <td>{{user.id}}</td>
+        <td>{{#link-to "users.edit" user.id}}{{user.fullName}}{{/link-to}}</td>
+        <td>{{user.documents.length}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

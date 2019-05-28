@@ -9,10 +9,22 @@ const Router = EmberRouter.extend({
 Router.map(function () {
   this.route('organizations', function () {
     this.route('edit', {
-      path: ":/id"
+      path: "/:id"
     });
     this.route('users', {
       path: "/:id/users"
+    });
+  });
+  this.route('users', function () {
+    this.route('edit', {
+      path: "/:id"
+    });
+    this.route('documents', {
+      path: "/:id/documents"
+    }, function () {
+      this.route('edit', {
+        path: "/:id"
+      });
     });
   });
 });
