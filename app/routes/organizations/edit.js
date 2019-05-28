@@ -14,5 +14,7 @@ export default Route.extend({
 
     controller.set("alertText", "");
     controller.set("alertType", "success");
+
+    controller.set("showUserModal", false);
   }
 });
