@@ -29,9 +29,17 @@ export default function () {
   this.get("/organizations/:id/users");
 
   this.get("/users");
+  this.post("/users");
+
   this.get("/users/:id");
+  this.del("/users/:id");
+
   this.get("/users/:id/documents");
+  this.post("/users/:id/documents");
 
   this.get("/documents");
+  this.post("/documents");
+
   this.get("/documents/:id");
+  this.del("/documents/:id");
 }
