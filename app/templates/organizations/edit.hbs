@@ -1,16 +1,51 @@
-<table class="table">
-  <thead>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Documents</th>
-  </thead>
-  <tbody>
-    {{#each model.users as |user|}}
-      <tr>
-        <td>{{user.id}}</td>
-        <td>{{#link-to "users.edit" user.id}}{{user.fullName}}{{/link-to}}</td>
-        <td>{{user.documents.length}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+{{#bs-alert visible=hasAlert fade=true type=alertType dismissible=true}}
+  {{alertText}}
+{{/bs-alert}}
+
+<div class="row top-buffer">
+  <div class="col-xl-12">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Documents</th>
+      </thead>
+      <tbody>
+        {{#each model.users as |user|}}
+          <tr>
+            <td>{{user.id}}</td>
+            <td>{{#link-to "users.edit" user.id}}{{user.fullName}}{{/link-to}}</td>
+            <td>{{user.documents.length}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-xl-12">
+    {{#bs-button onClick=(action "toggleModal")}}Create a new user{{/bs-button}}
+  </div>
+</div>
+
+{{#bs-modal open=showUserModal size="lg" onSubmit=(action "createUser") as |modal|}}
+  {{#modal.header}}Create User{{/modal.header}}
+  {{#modal.body}}
+    <div class="row">
+      <div class="col">
+        {{input class="form-control" value=firstName id="firstname" placeholder="First Name"}}
+      </div>
+      <div class="col">
+        {{input class="form-control" value=lastName id="lastname" placeholder="Last Name"}}
+      </div>
+      <div class="col">
+        {{input type="email" class="form-control" value=emailAddress id="email" placeholder="Email Address"}}
+      </div>
+    </div>
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button onClick=(action modal.submit) type="success"}}Create{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}

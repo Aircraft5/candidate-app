@@ -5,5 +5,14 @@ export default Route.extend({
     return this.store.findRecord("organization", params.id, {
       include: "users,users.documents"
     });
+  },
+
+  resetController(controller) {
+    controller.set("firstName", "");
+    controller.set("lastName", "");
+    controller.set("emailAddress", "");
+
+    controller.set("alertText", "");
+    controller.set("alertType", "success");
   }
 });
