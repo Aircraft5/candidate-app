@@ -4,6 +4,22 @@
 
 <div class="row top-buffer">
   <div class="col-xl-12">
+    <h4>Basic Information</h4>
+    <form>
+      <div class="form-group">
+        <label for="organization-name">Name</label>
+        {{input class="form-control" value=model.name id="organization-name"}}
+      </div>
+      {{#bs-button}}Cancel{{/bs-button}}
+      {{#bs-button type="primary"}}Save{{/bs-button}}
+    </form>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-xl-12">
+    <h4>Users</h4>
+
     <table class="table">
       <thead>
         <th>Id</th>
@@ -25,7 +41,7 @@
 
 <div class="row top-buffer">
   <div class="col-xl-12">
-    {{#bs-button onClick=(action "toggleModal")}}Create a new user{{/bs-button}}
+    {{#bs-button type="primary" onClick=(action "toggleModal")}}Create a new user{{/bs-button}}
   </div>
 </div>
 
