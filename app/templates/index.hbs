@@ -1,7 +1,7 @@
 <div class="row top-buffer">
   <div class="col-xl-12">
     <h2>Axcient Candidate Application</h2>
-    <p>The purpose of this application is to display organizations with users and their documents.</p>
+    <p>The purpose of this application is to display organizations with users and their documents. Use the {{link-to "Organizations" "organizations.index"}} page as a reference.</p>
   </div>
 </div>
 
@@ -13,17 +13,17 @@
           <li>
             Request the user from the API [<a href="https://guides.emberjs.com/release/models/finding-records/#toc_retrieving-a-single-record" target="_blank" rel="noopener">guide</a>]<br>
             <ul>
-              <li><i>Criteria:</i> The model hook of the route fetches the correct data for the page</li>
+              <li>The model hook of the route needs to fetch the data for the page</li>
             </ul>
           </li>
           <li>
             Display the user's basic information<br>
             <ul>
-              <li><i>Criteria:</i> "First Name" input exists and displays the user's first name</li>
-              <li><i>Criteria:</i> "Last Name" input exists and displays the user's last name</li>
-              <li><i>Criteria:</i> "Email Address" input exists and displays the user's email address</li>
-              <li><i>Criteria:</i> "Save" button exists and is the primary button for the form</li>
-              <li><i>Criteria:</i> "Cancel" button exists and resets the form values</li>
+              <li>"First Name" input should display the user's first name</li>
+              <li>"Last Name" input should display the user's last name</li>
+              <li>"Email Address" input should display the user's email address</li>
+              <li>"Save" button should be the primary button for the form</li>
+              <li>"Cancel" button should be a normal button</li>
             </ul>
           </li>
         </ol>
@@ -33,15 +33,15 @@
           <li>
             Cancel button<br>
             <ul>
-              <li><i>Criteria:</i> Exists and is not the primary button</li>
-              <li><i>Criteria:</i> When clicked, calls the 'cancel' action and reverts the changes to the form fields</li>
+              <li>Button should exist and not be the primary button</li>
+              <li>When the button is clicked, it should call the 'cancel' action and revert the changes to the model</li>
             </ul>
           </li>
           <li>
             Save Button<br>
             <ul>
-              <li><i>Criteria:</i> Exists and is the primary button</li>
-              <li><i>Criteria:</i> When clicked, calls the 'saveUser' action and saves the current changes</li>
+              <li>Button should exist and be the primary button</li>
+              <li>When the button is clicked, it should call the 'saveUser' action and save the user model</li>
             </ul>
           </li>
         </ol>
@@ -51,15 +51,15 @@
           <li>
             If the user has documents<br>
             <ul>
-              <li><i>Criteria:</i> Each document is listed</li>
-              <li><i>Criteria:</i> The document name links to the "users.documents.edit" page</li>
-              <li><i>Criteria:</i> Below the last document, display a link labeled "Create a Document" which links to the "users.documents.new" page</li>
+              <li>Each document should be listed</li>
+              <li>The document name should link to the "users.documents.edit" route</li>
+              <li>Below the last document, a link labeled "Create a Document" should be displayed which links to the "users.documents.new" page</li>
             </ul>
           </li>
           <li>
             If the user has no documents<br>
             <ul>
-              <li><i>Criteria:</i> Display a link labeled "Create a Document" which links to the "users.documents.new" page</li>
+              <li>A link labeled "Create a Document" should be displayed which links to the "users.documents.new" page</li>
             </ul>
           </li>
         </ol>
@@ -69,18 +69,18 @@
           <li>
             Display document fields<br>
             <ul>
-              <li><i>Criteria:</i> "Name" input exists</li>
-              <li><i>Criteria:</i> "Contents" input exists</li>
-              <li><i>Criteria:</i> "Save" button exists and is the primary button for the form</li>
-              <li><i>Criteria:</i> "Cancel" button exists and resets the form values</li>
+              <li>"Name" input should exist</li>
+              <li>"Contents" input should exist</li>
+              <li>"Save" button should exist and is the primary button for the form</li>
+              <li>"Cancel" button should exist and reset the model</li>
             </ul>
           </li>
         </ol>
       {{/acc.item}}
-      {{#acc.item value="5" title="Bonus challenges - No particular order"}}
+      {{#acc.item value="5" title="Bonus challenges"}}
         <ul>
-          <li>Add "cancel" action to the 'organizations.edit' page</li>
-          <li>Add "saveOrganization" action to 'organizations.edit' page</li>
+          <li>Update the "cancelEdit" action in the 'organizations.edit' controller</li>
+          <li>Update the "saveOrganization" action in the 'organizations.edit' controller</li>
           <li>Add the ability to delete a user</li>
           <li>Add the ability to update an existing document</li>
           <li>Add the ability to delete a document</li>
