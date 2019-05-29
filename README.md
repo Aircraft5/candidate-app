@@ -23,6 +23,8 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
+![Landing Page](/public/assets/landing-page.png)
+
 ## Before you begin
 
 It is highly recommended you read through the ember.js [guides](https://guides.emberjs.com/release/) before proceeding to the challenges. Working through the [tutorial](https://guides.emberjs.com/release/tutorial/ember-cli/) application will help orient you in this application.
