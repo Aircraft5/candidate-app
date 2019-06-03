@@ -17,13 +17,13 @@ Router.map(function () {
   });
   this.route('users', function () {
     this.route('edit', {
-      path: "/:id"
+      path: "/:user_id"
     });
     this.route('documents', {
-      path: "/:id/documents"
+      path: "/:user_id/documents"
     }, function () {
       this.route('edit', {
-        path: "/:id"
+        path: "/:document_id"
       });
       this.route('new');
     });

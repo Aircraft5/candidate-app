@@ -33,6 +33,7 @@ export default function () {
 
   this.get("/users/:id");
   this.del("/users/:id");
+  this.patch("/users/:id");
 
   this.get("/users/:id/documents");
   this.post("/users/:id/documents");

@@ -1,5 +1,46 @@
 <div class="row top-buffer">
   <div class="col-xl-12">
     <h4>User</h4>
+    <form {{action "saveUser" on="submit"}}>
+      <div class="form-group">
+        {{input
+          value=this.model.firstName
+          class="form-control first-name"
+          placeholder="First Name"
+        }}
+      </div>
+      <div class="form-group">
+        {{input
+          value=this.model.lastName
+          class="form-control last-name"
+          placeholder="Last Name"
+        }}
+      </div>
+      <div class="form-group">
+        {{input
+          value=this.model.emailAddress
+          type="email"
+          class="form-control email-address"
+          placeholder="E-mail Address"
+        }}
+      </div>
+      <button {{action "cancel"}} class="btn btn-secondary user-edit-cancel-btn">Cancel</button>
+      <button type="submit" class="btn btn-primary user-edit-save-btn">Save</button>
+    </form>
+  </div>
+</div>
+<div class="row top-buffer">
+  <div class="col-xl-12">
+    <h4>List of documents:</h4>
+    {{#each this.model.documents as |document|}}
+      <div>
+        {{#link-to "users.documents.edit" this.model document}}
+          {{document.name}}
+        {{/link-to}}
+      </div>
+    {{/each}}
+    <div>
+      {{#link-to "users.documents.new" this.model}}Create a Document{{/link-to}}
+    </div>
   </div>
 </div>

@@ -3,11 +3,11 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   actions: {
     cancel() {
-      // reset changes
+      this.model.rollbackAttributes();
     },
 
     saveUser() {
-      // grab the model and save the user!
+      this.model.save();
     }
   }
 });
